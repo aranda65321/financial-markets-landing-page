@@ -179,12 +179,17 @@ p {
   height: 5vh !important;
 }
 
-.error-label-mobile{
+.error-label-mobile {
   color: white;
   font-size: 2vh;
 }
 
-.number{
+.number {
   width: 40.6vw;
+  border-radius: 12px;
+}
+
+.number-mobile {
+  width: 100%;
   border-radius: 12px;
 }

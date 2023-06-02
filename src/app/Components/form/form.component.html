@@ -48,13 +48,13 @@
       <br>
       <div class="form-group">
         <div class="wrapper" style="text-align: left;">
-          <ngx-intl-tel-input [cssClass]="'number'" [preferredCountries]="preferredCountries"
+          <ngx-intl-tel-input [cssClass]="isMobile?'number-mobile':'number'" [preferredCountries]="preferredCountries"
             [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[
               SearchCountryField.Iso2,
               SearchCountryField.Name
             ]" [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.Colombia" [maxLength]="15"
             [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National"
-            name="formInput2" id="formInput2" formControlName="formInput2" [cssClass]="'number'">
+            name="formInput2" id="formInput2" formControlName="formInput2"  >
           </ngx-intl-tel-input>
         </div>
         <span style="color:white" *ngIf="this.isEventRegister && this.formGroup.get('formInput2')?.errors?.['required']"
