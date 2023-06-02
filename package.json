@@ -25,7 +25,12 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.0",
     "firebase-tools": "^12.3.0",
+    "google-libphonenumber": "^3.2.32",
+    "intl-tel-input": "^17.0.3",
     "jquery": "^3.7.0",
+    "ng4-intl-phone": "^14.0.1",
+    "ngx-bootstrap": "^7.1.2",
+    "ngx-intl-tel-input": "^3.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

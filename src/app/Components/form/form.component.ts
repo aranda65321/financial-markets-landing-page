@@ -7,6 +7,7 @@ import { PageService } from './../../common/page/page.service';
 import { Country } from 'src/app/common/domain/models/country';
 import { COUNTRIES_DB_ES } from 'src/app/common/domain/models/countries';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 
 @Component({
   selector: 'app-form',
@@ -20,6 +21,11 @@ export class FormComponent implements OnInit {
   isEventRegister: boolean = false;
   message: string = 'Usuario registrado exitosamente';
   countries: Country[];
+  preferredCountries: CountryISO[] = [CountryISO.Colombia, CountryISO.UnitedStates];
+  	separateDialCode = false;
+	SearchCountryField = SearchCountryField;
+	CountryISO = CountryISO;
+  PhoneNumberFormat = PhoneNumberFormat;
 
   constructor(
     private pageService: PageService,
@@ -49,20 +55,21 @@ export class FormComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       formInput: ['', Validators.required],
       formInput4: ['', Validators.required],
-      //formInput2: ['', [Validators.required, Validators.pattern(/^([+0-9])*$/)]],
+      formInput2: ['', [Validators.required]],
       formInput3: ['', [Validators.required, Validators.email]],
     });
   }
 
   registerUser() {
     this.isEventRegister = true;
+    debugger;
     if (!this.formGroup.invalid) {
       debugger
       this.isEventRegister = false;
       const name = $('#formInput').val() + '';
       const pais = $('#formInput4').val() + '';
       const mail = $('#formInput3').val() + '';
-      const telephone = ""//this.formGroup.controls['formInput2'].value + '';
+      const telephone = this.formGroup.controls['formInput2'].value['e164Number'] + '';
       const date = new Date().toLocaleDateString('en-US');
       const user: User = {
         name,
@@ -94,4 +101,8 @@ export class FormComponent implements OnInit {
       duration: 5 * 1000,
     });
   }
+
+  changePreferredCountries() {
+		this.preferredCountries = [CountryISO.Colombia, CountryISO.UnitedArabEmirates];
+	}
 }

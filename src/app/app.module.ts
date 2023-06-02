@@ -55,7 +55,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 @NgModule({
   declarations: [
@@ -113,6 +113,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    NgxIntlTelInputModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
 

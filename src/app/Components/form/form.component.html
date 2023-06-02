@@ -13,7 +13,7 @@
         <input type="text" class="form-control" id="formInput" formControlName="formInput" placeholder="Nombre Completo"
           [ngClass]="{'form-control-error ' : this.isEventRegister  && this.formGroup.get('formInput')?.errors?.['required']}" />
         <span *ngIf="this.isEventRegister && this.formGroup.get('formInput')?.errors?.['required']"
-          [ngClass]="{'error-label-mobile': isMobile}">
+          [ngClass]="{'error-label-mobile': isMobile}" style="color:white">
           El Nombre no puede quedar vacío
         </span>
       </div>
@@ -22,11 +22,11 @@
         <input type="text" class="form-control" id="formInput3" formControlName="formInput3" placeholder="Correo"
           [ngClass]="{'form-control-error ' : this.isEventRegister  && this.formGroup.get('formInput3')?.errors?.['required']}" />
         <span *ngIf="this.isEventRegister && this.formGroup.get('formInput3')?.errors?.['required']"
-          [ngClass]="{'error-label-mobile': isMobile}">
+          [ngClass]="{'error-label-mobile': isMobile}" style="color:white">
           El Correo no puede quedar vacío
         </span>
         <span *ngIf="this.isEventRegister && this.formGroup.get('formInput3')?.errors?.['email']"
-          [ngClass]="{'error-label-mobile': isMobile}">
+          [ngClass]="{'error-label-mobile': isMobile}" style="color:white">
           El Correo tiene que ser una direccion valida
         </span>
       </div>
@@ -41,24 +41,44 @@
           </datalist>
         </div>
         <span *ngIf="this.isEventRegister && this.formGroup.get('formInput')?.errors?.['required']"
-          [ngClass]="{'error-label-mobile': isMobile}">
+          [ngClass]="{'error-label-mobile': isMobile}" style="color:white">
           El pais no puede quedar vacio
         </span>
       </div>
       <br>
       <div class="form-group">
-      <!--  <int-phone-prefix [defaultCountry]="'co'" [locale]="'es'" formControlName="formInput2"
-          [ngClass]="{'form-control-error ' : this.isEventRegister  && this.formGroup.get('formInput2')?.errors?.['required']}"
-          class="dropdown-content">
-        </int-phone-prefix>
-        <span *ngIf="this.isEventRegister && this.formGroup.get('formInput2')?.errors?.['required']"
+        <div class="wrapper" style="text-align: left;">
+          <ngx-intl-tel-input
+            [cssClass]="'number'"
+            [preferredCountries]="preferredCountries"
+            [enableAutoCountrySelect]="true"
+            [enablePlaceholder]="true"
+            [searchCountryFlag]="true"
+            [searchCountryField]="[
+              SearchCountryField.Iso2,
+              SearchCountryField.Name
+            ]"
+            [selectFirstCountry]="false"
+            [selectedCountryISO]="CountryISO.Colombia"
+            [maxLength]="15"
+            [phoneValidation]="true"
+            [separateDialCode]="separateDialCode"
+            [numberFormat]="PhoneNumberFormat.National"
+            name="formInput2"
+            id="formInput2"
+            formControlName="formInput2"
+            [cssClass]="'number'"
+          >
+          </ngx-intl-tel-input>
+        </div>
+        <span style="color:white" *ngIf="this.isEventRegister && this.formGroup.get('formInput2')?.errors?.['required']"
           [ngClass]="{'error-label-mobile': isMobile}">
           El Telefono no puede quedar vacío
         </span>
-        <span *ngIf="this.isEventRegister && this.formGroup.get('formInput2')?.errors?.['pattern']"
+        <span style="color:white" *ngIf="this.isEventRegister && this.formGroup.get('formInput2')?.errors?.['pattern']"
           [ngClass]="{'error-label-mobile': isMobile}">
           El Telefono solo puede contener numeros
-        </span> -->
+        </span>
       </div>
     </form>
     <div style="text-align: center;">
