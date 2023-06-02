@@ -1,0 +1,47 @@
+<div class="home-content">
+  <div [ngClass]="{'home-firts-section-mobile':isMobile}" class="home-firts-section">
+    <div>
+      <div [ngClass]="{'div-section-one-mobile':isMobile}" class="div-section-one">
+        <label [ngClass]="{'home-title-mobile':isMobile}" class="home-title">NOTICIAS SOBRE LOS MERCADOS
+          FINANCIEROS Y CRIPTOMONEDAS</label>
+      </div>
+      <div [ngClass]="{'div-section-one-text-mobile': isMobile}" class="div-section-one-text">
+        <label [ngClass]="{'home-text-mobile': isMobile}" class="home-text">
+          Un sitio web dedicado completamente a informar sobre
+          las noticias y acontecimientos mas importantes que influyen en
+          la economia mundial
+        </label>
+      </div>
+    </div>
+    <div>
+      <div [ngClass]="{'home-firts-section-buttons-mobile':isMobile}" class="home-firts-section-buttons">
+        <a routerLink="criptomonedas"><span [ngClass]="{'btn-home-mobile':isMobile}"
+            class="btn btn-home button-blue">Criptomonedas</span></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a routerLink="finanzas"><span [ngClass]="{'btn-home-mobile':isMobile}"
+            class="btn btn-home button-white">Mercados financieros</span></a>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+  <div>
+    <app-card-home *ngIf="cardsCripto.length > 0" [typeView]="1" [data]="card1"></app-card-home>
+    <app-card-home *ngIf="cardsMercados.length > 0" [typeView]="2" [data]="card2"></app-card-home>
+  </div>
+  <div class="home-end-inputs">
+    <div>
+      <label [ngClass]="{'home-end-inputs-title-mobile':isMobile}" class="home-end-inputs-title">Ultimas
+        Entradas</label>
+      <div [ngClass]="{'home-end-inputs-line-mobile':isMobile}" class="second-section-line home-end-inputs-line"></div>
+      <label class="home-end-inputs-text">Conoce e informate con nuestras ultimas noticias de economia mundial</label>
+    </div>
+    <br>
+    <div class="row">
+      <div *ngFor="let card of cards" class="col-md-3">
+        <app-card-big [typeCard]="PORTRAIT" [dataCard]="card"></app-card-big>
+      </div>
+    </div>
+  </div>
+</div>
+

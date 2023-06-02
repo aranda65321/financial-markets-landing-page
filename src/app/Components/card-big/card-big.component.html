@@ -1,0 +1,64 @@
+<div *ngIf="isSmall" class=" center d-flex justify-content-around" (click)="loadDetail()">
+  <div class="card mb-3 card game-card-details-small center d-flex justify-content-around"
+    style="max-width: 1500px; min-height: 250px; max-height: 300px;">
+
+    <div class="row no-gutters">
+      <div class="col-md-4  div-card-small" style="max-width: 300px; min-height: 250px; max-height: 300px;">
+        <img src={{dataCard?.imgPath}} class="card-img img-card-small" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <label class="d-flex justify-content-between" style="font-family: 'OswalMedium', sans-serif;"><span
+              class="text-left" style="color:darkgrey">{{dataCard?.creationDate}}</span> <span class="text-right"
+              style="color:#e3ba68;">
+              {{dataCard?.category ==='1' ? 'Criptomonedas': 'Mercados Financieros' }}
+            </span>
+          </label>
+          <br>
+          <h5 class="card-title text-center text-title-small">{{dataCard?.title}}</h5>
+          <p class="card-text text-conten-small" [innerHTML]="this.getPrettyText(dataCard?.content)"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="isPortrait" class=" center d-flex justify-content-around" (click)="loadDetail()">
+  <div class="card game-card-details center d-flex justify-content-around  card-portraid">
+
+    <img src={{dataCard?.imgPath}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <label class="d-flex justify-content-between" style="font-family: 'OswalMedium', sans-serif;">
+        <span class="text-left" style="color:darkgrey">
+          {{dataCard?.creationDate}}
+        </span>
+        <span class="text-right" style="color:#e3ba68;">{{dataCard?.category ===
+          '1' ? 'Criptomonedas': 'Mercados Financieros' }}
+        </span>
+      </label>
+      <br>
+      <h5 class="card-title text-left text-title">{{dataCard?.title}}</h5>
+      <p class="card-text text-conten" [innerHTML]="this.getPrettyText(dataCard?.content)"></p>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="isBig" class=" center d-flex justify-content-around" (click)="loadDetail()">
+  <div class="card mb-3 col-md-8  game-card-details-big">
+
+    <img class="card-img-top" src={{dataCard?.imgPath}} alt="Card image cap">
+    <div class="card-body">
+      <label class="d-flex justify-content-between" style="font-family: 'OswalMedium', sans-serif;"><span
+          class="text-left" style="color:darkgrey">{{dataCard?.creationDate}}</span> <span class="text-right"
+          style="color:#e3ba68;">
+          {{dataCard?.category === '1' ? 'Criptomonedas': 'Mercados Financieros' }}
+        </span>
+      </label>
+      <h5 class="card-title text-title">{{dataCard?.title}}</h5>
+      <p class="card-text  text-conten-small" [innerHTML]="this.getPrettyText(dataCard?.content)"></p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div >
+  <ngb-toast *ngIf="showToast" header="Notificacion" [autohide]="true" (hidden)="showToast=false"
+  [ngClass]="{'create-form-toast-card-mobile': isMobile}" class="create-form-toast-card">
+    {{message}}
+  </ngb-toast>
+</div>
+
+<div class="form-card">
+  <div class="form-card-content" [ngClass]="{'form-card-content-mobile': isMobile}">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="">
+          <div class="px-4 py-3">
+            <div class="mb-3" style="text-align: center;">
+              <label class="form-title form-text form-text-sub">Formulario Creacion noticias</label>
+            </div>
+            <div class="mb-3">
+              <label class="form-label form-text form-text-sub">Titulo noticia</label>
+              <input type="input" class="form-control form-text" id="title" placeholder="Nueva noticia">
+            </div>
+            <div class="mb-3">
+              <label class="form-label form-text form-text-sub">Categoria</label>
+              <select class="form-select form-text" id="category">
+                <option selected class="form-text">Seleccionar</option>
+                <option value="1" class="form-text">Criptomonedas</option>
+                <option value="2" class="form-text">Mercados financieros</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label form-text form-text-sub">Url imagen fondo</label>
+              <input type="input" class="form-control form-text" id="imgUrl" placeholder="Url imagen fondo">
+            </div>
+            <div class="mb-3">
+              <label class="form-label form-text form-text-sub">Contenido noticia</label>
+              <textarea class="form-control form-text form-text-area" placeholder="Contenido..."
+                id="content"></textarea>
+              <label class="form-label form-text form-text-sub">Para hacer uso de negrita encierre el texto entre */ texto /*</label>
+            </div>
+            <div class="mb-3">
+              <label class="form-label form-text form-text-sub">Titulo del boton</label>
+              <input type="input" class="form-control form-text" id="imgUrl" placeholder="Texto boton"
+                id="buttons">
+            </div>
+            <div class="form-btn">
+              <button type="submit" [ngClass]="{'btn-home-mobile': isMobile}" class="btn btn-home button-blue"
+                (click)="saveCard()">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

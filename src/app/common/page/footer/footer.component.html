@@ -1,0 +1,55 @@
+<div [ngClass]="{'footer-mobile': isMobile}" class="container-fluid footer">
+  <div class="content-footer">
+    <div class="row">
+      <div class="col-md-1 ">
+      </div>
+
+      <div [ngClass]="{'footer-div-mobile':isMobile}" class="col-md-4 footer-div">
+        <div>
+          <label [ngClass]="{'footer-label-title-mobile': isMobile}" class="footer-label-title">
+            SOBRE NOSOTROS
+          </label>
+          <div [ngClass]="{'div-footer-contact-text-mobile':isMobile, 'div-footer-contact-text':!isMobile}">
+            <label [ngClass]="{'footer-text-mobile':isMobile}" class="footer-text">
+              Un sitio web dedicado completamente a
+              informar sobre las noticias y
+              acontecimientos mas importantes que
+              influyen en la economia mundial
+            </label>
+            <br>
+            <label [ngClass]="{'footer-text-mobile':isMobile}" class="footer-text">©Copyright {{year}}</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div>
+          <img [ngClass]="{'footer-icon-mobile':isMobile}" class="footer-icon" src="assets/img/footerico1.png" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div>
+          <label [ngClass]="{'footer-label-title-mobile':isMobile}" class="footer-label-title">CONTACTO</label>
+          <br>
+          <div>
+            <div class="div-social-media">
+              <a href="https://www.facebook.com/profile.php?id=100083278544053&mibextid=LQQJ4d" target="_blank">
+                <img [ngClass]="{'footer-icon-redes-mobile':isMobile}" class="footer-icon-redes"
+                  src="assets/img/facebook.webp" />
+              </a>
+              <a href="https://instagram.com/realidadmercadofinanciero?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
+                <img [ngClass]="{'footer-icon-redes-mobile':isMobile}" class="footer-icon-redes"
+                  src="assets/img/insta.png" />
+              </a>
+            </div>
+          </div>
+          <br>
+          <label [ngClass]="{'footer-text-mobile':isMobile}" class="footer-text">
+            marketing@realidadmercadofinanciero.com
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1 footer-end">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="content-news">
+  <div class="row">
+    <div [ngClass]="{'news-first-section-mobile': isMobile, 'news-first-section1':imgPath2, 'news-first-section2':imgPath1}" class="news-first-section">
+      <label [ngClass]="{'news-title-mobile': isMobile}" class="news-title">{{title}}</label>
+    </div>
+    <div class="news-second-sections">
+      <div  [ngClass]="{'news-big-card-container-mobile': isMobile}" class="news-big-card-container">
+        <app-card-big [typeCard]="'BIG'" [dataCard]="bigCard"></app-card-big>
+      </div>
+    </div>
+    <div [ngClass]="{'news-third-section-mobile': isMobile}" class="news-third-section">
+      <div class="row">
+        <div *ngFor="let card of listCards" class="col-md-12">
+          <app-card-big [typeCard]="!isMobile ?'SMALL':'PORTRAIT'" [dataCard]="card"></app-card-big>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

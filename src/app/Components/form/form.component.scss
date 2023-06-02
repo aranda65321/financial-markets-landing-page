@@ -1,0 +1,185 @@
+.form-finanzas {
+  background-image: url("/assets/img/bgform.png");
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  background-attachment: fixed;
+  width: 100%;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  margin: 0;
+  text-align: right;
+  display: flex;
+  justify-content: left;
+  padding-left: 80px;
+  z-index: 999 !important;
+}
+
+.forn-aling {
+  text-align: right;
+  position: relative;
+  float: left;
+  background-color: rgba($color: #ffffff, $alpha: 0);
+  padding: 0px;
+  width: 44%;
+  border-radius: 50px;
+  z-index: 2;
+}
+
+input[type="text"] {
+  display: flex;
+  height: 38px;
+  border-radius: 8px;
+  font-family: MonserratLigth;
+  font-size: 24px;
+  vertical-align: text-bottom;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  display: flex;
+  height: 40px;
+  border-radius: 8px;
+  font-family: MonserratLigth;
+  font-size: 24px;
+  vertical-align: text-bottom;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.forn-aling h2 {
+  font-family: OswalMedium;
+  font-size: 52px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.p-text {
+  text-align: justify;
+}
+
+.p-text-mobile {
+  text-align: center;
+  font-size: 2vh;
+}
+
+.form-control-error {
+  background-color: #ffddd0;
+  border-color: tomato;
+}
+
+.btn-forms {
+  position: relative;
+  right: 0px;
+  width: 100%;
+  min-width: 150px;
+  margin-top: 50px;
+
+  height: 75px;
+  border-radius: 55px;
+  background-color: #146cec;
+  font-family: OswalMedium;
+  color: #ffffff;
+  font-size: 35px;
+  border-color: #146cec;
+  transition: 0.2s;
+}
+
+.btn-forms-mobile {
+  margin-top: 20px !important;
+  font-size: 4vh !important;
+}
+
+.btn-forms:hover {
+  background-color: #144874;
+}
+
+.form-mobile {
+  text-align: center;
+  position: relative;
+  font-size: 25px;
+  padding: 5px;
+  width: 90%;
+  border-radius: 50px;
+  padding: 25px;
+}
+
+.form-mobile h2 {
+  font-size: 35px;
+}
+
+.row-form-mobile {
+  padding: 0;
+  padding-top: 10vh !important;
+  padding-bottom: 50px;
+  justify-content: center;
+  z-index: 999;
+  background-image: url("/assets/img/bgform.png");
+  background-size: cover;
+}
+
+.form-group {
+  font-family: MonserratLigth;
+  font-size: 24px;
+  color: #424242;
+}
+
+.create-card-toast {
+  padding-top: 20vh;
+  padding-left: 68vw;
+  float: left;
+  position: absolute;
+}
+
+p {
+  font-family: MonserratLigth;
+  color: #ffffff;
+  font-size: 22px;
+  text-align: justify;
+}
+
+.div-2-section {
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.section-img-2 {
+  width: 10vw;
+}
+
+.section-img-2-mobile {
+  width: 40vw !important;
+}
+
+.div-content-info-2 {
+  padding-left: 5vw;
+  padding-right: 6vw;
+}
+
+.title-2 {
+  font-family: OswalMedium;
+  color: #141c4c;
+  font-size: 5vh;
+  line-height: 6.8vh;
+}
+
+.label-2 {
+  font-family: MonserratLigth;
+  font-size: 2.5vh;
+  color: black;
+}
+
+.label-2-mobile {
+  font-size: 2.5vh !important;
+}
+
+.dropdown-content {
+  border-radius: 3vh !important;
+  height: 5vh !important;
+}
+
+.error-label-mobile{
+  color: white;
+  font-size: 2vh;
+}

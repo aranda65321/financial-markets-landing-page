@@ -1,0 +1,165 @@
+<div [ngClass]="{'row-form-mobile': isMobile}" class="row form-finanzas" style="z-index: 999;">
+  <div [ngClass]="{'form-mobile': isMobile}" class="row col-md-12 forn-aling">
+    <form class="" [formGroup]="formGroup">
+      <h2 style="text-align: center;">DESCUBRE COMO INVERTIR</h2>
+      <br>
+      <p [ngClass]="{'p-text-mobile': isMobile}" class="p-text">Aprende a invertir en los activos más codiciados del
+        mundo, desde las empresas que ya conoce y los
+        productos que utilizas diariamente, hasta los principales
+        pares de divisas y los ETF preferidos por los inversores.
+      </p>
+      <br>
+      <div class="form-group">
+        <input type="text" class="form-control" id="formInput" formControlName="formInput" placeholder="Nombre Completo"
+          [ngClass]="{'form-control-error ' : this.isEventRegister  && this.formGroup.get('formInput')?.errors?.['required']}" />
+        <span *ngIf="this.isEventRegister && this.formGroup.get('formInput')?.errors?.['required']"
+          [ngClass]="{'error-label-mobile': isMobile}">
+          El Nombre no puede quedar vacío
+        </span>
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="text" class="form-control" id="formInput3" formControlName="formInput3" placeholder="Correo"
+          [ngClass]="{'form-control-error ' : this.isEventRegister  && this.formGroup.get('formInput3')?.errors?.['required']}" />
+        <span *ngIf="this.isEventRegister && this.formGroup.get('formInput3')?.errors?.['required']"
+          [ngClass]="{'error-label-mobile': isMobile}">
+          El Correo no puede quedar vacío
+        </span>
+        <span *ngIf="this.isEventRegister && this.formGroup.get('formInput3')?.errors?.['email']"
+          [ngClass]="{'error-label-mobile': isMobile}">
+          El Correo tiene que ser una direccion valida
+        </span>
+      </div>
+      <br>
+      <div class="form-group">
+        <div>
+          <input list="paises" value="" class="form-control" placeholder="Pais" id="formInput4"
+            formControlName="formInput4"
+            [ngClass]="{'form-control-error ' : this.isEventRegister  && this.formGroup.get('formInput4')?.errors?.['required']}">
+          <datalist id="paises">
+            <option *ngFor="let country of countries" [value]='country.name'>{{country.name}}</option>
+          </datalist>
+        </div>
+        <span *ngIf="this.isEventRegister && this.formGroup.get('formInput')?.errors?.['required']"
+          [ngClass]="{'error-label-mobile': isMobile}">
+          El pais no puede quedar vacio
+        </span>
+      </div>
+      <br>
+      <div class="form-group">
+        <int-phone-prefix [defaultCountry]="'co'" [locale]="'es'" formControlName="formInput2"
+          [ngClass]="{'form-control-error ' : this.isEventRegister  && this.formGroup.get('formInput2')?.errors?.['required']}"
+          class="dropdown-content">
+        </int-phone-prefix>
+        <span *ngIf="this.isEventRegister && this.formGroup.get('formInput2')?.errors?.['required']"
+          [ngClass]="{'error-label-mobile': isMobile}">
+          El Telefono no puede quedar vacío
+        </span>
+        <span *ngIf="this.isEventRegister && this.formGroup.get('formInput2')?.errors?.['pattern']"
+          [ngClass]="{'error-label-mobile': isMobile}">
+          El Telefono solo puede contener numeros
+        </span>
+      </div>
+    </form>
+    <div style="text-align: center;">
+      <button [ngClass]="{'btn-forms-mobile ' : this.isMobile}" class="btn btn-success btn-forms"
+        (click)="registerUser()" id="submit">Registrarse Gratis</button>
+    </div>
+  </div>
+  <div class="create-form-toast">
+    <ngb-toast *ngIf="showToast" header="Notificacion" [autohide]="true" (hidden)="showToast=false">
+      {{message}}
+    </ngb-toast>
+  </div>
+</div>
+<div class="row div-2-section" style="background-color: white;">
+  <div class="col-md-4">
+    <img [ngClass]="{'section-img-2-mobile': isMobile}" class="section-img-2"
+      src="assets/img/Icono_seminarios_gratis.png">
+    <br>
+    <br>
+    <div class="div-content-info-2">
+      <label class="title-2">
+        ACCEDE A SEMINARIOS GRATIS
+      </label>
+      <br>
+      <br>
+      <label [ngClass]="{'label-2-mobile': isMobile}" class="label-2">
+        Descubre seminarios
+        gratuitos para aprender
+        sobre el mercado financiero,
+        calendario económico,
+        criptomonedas e inversión
+        en acciones, obteniendo
+        conocimientos y
+        oportunidades para generar
+        ingresos. <strong>¡Aprende, invierte
+          y crece financieramente sin
+          costo alguno!</strong>
+      </label>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <img [ngClass]="{'section-img-2-mobile': isMobile}" class="section-img-2" src="assets/img/Icono_no_experto.png">
+    <br>
+    <br>
+    <div class="div-content-info-2">
+      <label class="title-2">
+        NO ES NECESARIO QUE SEAS UN EXPERTO
+      </label>
+      <br>
+      <br>
+      <label [ngClass]="{'label-2-mobile': isMobile}" class="label-2">
+        El mercado financiero está
+        al alcance de todos. No se
+        necesita experiencia previa
+        para aprender a invertir,
+        generar ingresos y adquirir
+        conocimientos. <strong> Todos
+          pueden educarse y
+          participar activamente en
+          este mundo financiero en
+          constante crecimiento..</strong>
+      </label>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <img [ngClass]="{'section-img-2-mobile': isMobile}" class="section-img-2"
+      src="assets/img/Icono_aprende_a_invertir.png">
+    <br>
+    <br>
+    <div class="div-content-info-2">
+      <label class="title-2">
+        APRENDE INVERTIR DE FORMA SEGURA
+      </label>
+      <br>
+      <br>
+      <label [ngClass]="{'label-2-mobile': isMobile}" class="label-2">
+        Aprende a invertir de
+        manera segura en el
+        mercado financiero con
+        análisis de datos, sucesos
+        económicos, análisis técnico
+        e indicadores económicos.
+        <strong>Adquiere conocimientos
+          para tomar decisiones
+          informadas y maximizar tus
+          oportunidades de inversión.
+        </strong>
+      </label>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>

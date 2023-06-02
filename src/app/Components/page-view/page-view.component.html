@@ -1,0 +1,36 @@
+<div class="content">
+  <div class="row head-notice no-gutters" [ngClass]="{'head-mobile': isMobile}">
+    <p class="title-notice">{{card?.title}}</p>
+    <img src={{card?.imgPath}} />
+
+  </div>
+  <div class="row body-page no-gutters">
+    <div class=" overflow-auto col-md-3 no-gutters" [ngClass]="{'body-page-mobile': isMobile}" style="height: 150vh;">
+      <div class="row text-col-title">
+        <p class="text-col col-md-12">Ultimas entradas</p>
+      </div>
+      <div *ngFor="let card of cards" class="col-md-12no-gutters">
+        <app-card-big [typeCard]="PORTRAIT" [dataCard]="card"></app-card-big>
+      </div>
+    </div>
+    <div class="row col-md-9 notice-body no-gutters" [ngClass]="{'body-content-mobile': isMobile}">
+      <div class="notice-content" [ngClass]="{'body-content-mobile': isMobile}">
+        <p class="data-creation">{{card?.creationDate}}</p>
+        <div class="content-text" *ngFor="let item of card?.content; let i = index">
+          <p class="content-text" [innerHTML]="this.getPrettyText(item)"></p>
+          <br>
+          <div class="text-align:center">
+            <a routerLink="/registro" *ngIf="((i + 1) === card.content?.length) || ((((i+1)%6)===0) && i > 0) ">
+              <span class="btn btn-success btn-forms" [ngClass]="{'btn-forms-mobile': isMobile}">
+                {{card?.ButtonTitle}}
+              </span>
+              <br>
+              <br>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

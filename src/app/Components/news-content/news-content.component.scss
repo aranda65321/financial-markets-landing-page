@@ -1,0 +1,64 @@
+.content-news {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10vh;
+}
+
+.news-first-section1 {
+  background-image: url("/assets/img/bandas.jpg");
+  width: 100%;
+  height: 35vw;
+  background-size: 100vw;
+  padding-top: 15vh;
+  background-repeat: round;
+  text-align: center;
+}
+
+.news-first-section2 {
+  background-image: url("/assets/img/noticebg.png");
+  width: 100%;
+  height: 35vw;
+  background-size: 100vw;
+  padding-top: 15vh;
+  background-repeat: round;
+  text-align: center;
+}
+
+.news-first-section-mobile {
+  height: 60vw;
+  padding-top: 10vh;
+}
+
+.news-title {
+  color: white;
+  padding-top: 10vw;
+  font-size: 8vh;
+  font-family: OswalMedium;
+}
+
+.news-title-mobile {
+  padding-top: 1vw !important;
+  font-size: 5vh;
+  font-family: OswalMedium;
+}
+
+.news-second-sections {
+  background-color: white;
+}
+
+.news-big-card-container {
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  width: 100%;
+}
+
+.news-big-card-container-mobile {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  padding-left: 3vw;
+}
+
+.news-third-section-mobile {
+  background-color: white;
+  padding-left: 8.5vw;
+}

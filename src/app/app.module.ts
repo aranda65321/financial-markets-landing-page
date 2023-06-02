@@ -34,22 +34,48 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatTableModule} from '@angular/material/table';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatTreeModule} from '@angular/material/tree';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTreeModule } from '@angular/material/tree';
+import { CardBigComponent } from './Components/card-big/card-big.component';
+import { HomeComponent } from './Components/home/home.component';
+import { CardHomeComponent } from './Components/card-home/card-home.component';
+import { FormComponent } from './Components/form/form.component';
+import { FormCardComponent } from './Components/form-card/form-card.component';
+import { NewsContentComponent } from './Components/news-content/news-content.component';
+import { PageViewComponent } from './Components/page-view/page-view.component';
+import { SpinnerLoadComponent } from './common/page/spinner-load/spinner-load.component';
+import { PageModule } from './common/page/page.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CardBigComponent,
+    HomeComponent,
+    CardHomeComponent,
+    FormComponent,
+    FormCardComponent,
+    NewsContentComponent,
+    PageViewComponent,
+    SpinnerLoadComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    PageModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     MatCardModule,
     MatCheckboxModule,
     MatAutocompleteModule,
@@ -85,7 +111,9 @@ import {MatTreeModule} from '@angular/material/tree';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
 
   ],
   providers: [],

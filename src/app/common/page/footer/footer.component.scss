@@ -1,0 +1,103 @@
+.footer {
+  background-color: #141c4c;
+  position: relative;
+  width: 100%;
+  height: auto;
+  color: white;
+}
+
+.container-fluid {
+  background-color: #141c4c;
+}
+
+.content-footer {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding-top: 3vw;
+}
+.footer-icon {
+  width: 20vw;
+  margin-top: 12vh;
+}
+
+.footer-icon-mobile {
+  width: 45vw;
+  margin-top: 5vh;
+}
+
+.footer-label-title {
+  font-family: OswalMedium;
+  font-size: 1.5vw;
+  padding-top: 1vw;
+  left: 0;
+  text-align: left;
+}
+
+.footer-label-title-mobile {
+  font-size: 4vw !important;
+  padding-top: 4vw !important;
+  text-align: center !important;
+}
+
+.footer-text {
+  font-family: MonserratLigth;
+  text-align: justify;
+  font-size: 1.3vw;
+  padding-top: 1.5vw;
+}
+
+.footer-text-mobile {
+  font-size: 3vw;
+  padding-top: 3vw !important;
+  text-align: center !important;
+}
+
+.footer-icon-redes {
+  width: 3.5vw;
+  height: 3.5vw;
+  margin-left: 5%;
+}
+
+.footer-icon-redes-mobile {
+  width: 7vw !important;
+  height: 7vw !important;
+  margin-left: 1% !important;
+}
+
+.div-footer-contact-text {
+  padding-top: 1.2vw;
+}
+.div-social-media {
+  padding-top: 1.3vw;
+}
+.footer-end {
+  padding-top: 3vw;
+  height: 4vw;
+}
+//mobile css
+.footer-label-title-mobile {
+  font-family: OswalMedium;
+  font-size: 1.5vw;
+  padding-top: 0.3vw;
+}
+.footer-text-mobile {
+  font-size: 2.5vw;
+}
+
+.div-footer-contact-text-mobile {
+  padding-top: 0.1vw;
+}
+
+.footer-mobile {
+  height: auto !important;
+}
+
+
+.footer-div{
+  text-align: left;
+}
+
+.footer-div-mobile{
+  text-align: center;
+}

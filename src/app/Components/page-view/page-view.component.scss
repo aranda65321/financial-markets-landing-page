@@ -1,0 +1,152 @@
+.content {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.head-notice {
+  background-size: 100%;
+  width: 100%;
+  height: 40vw;
+  margin: 0;
+  padding: 0;
+
+}
+
+.body-page-mobile{
+display: none;
+}
+
+.head-notice img {
+  height: 100%;
+  Overflow: hidden;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.text-col {
+  padding-top: 100px;
+  font-family: MonserratLigth;
+  font-size: 30px;
+  width: 100%;
+
+}
+
+.notice-body {
+  background-color: #ececec;
+  margin: 0;
+  padding: 0;
+}
+
+.text-col-title {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  margin: 0;
+  padding: 0;
+}
+
+.notice-content {
+  width: 60vw;
+  margin-left: 80px;
+  margin-top: 100px;
+}
+
+.body-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+ }
+
+ .data-creation{
+  font-family: MonserratThin;
+  color: #454545;
+  font-size: 25px;
+ }
+
+ .content-text{
+  font-family: monserratLigth;
+  font-size: 24px;
+  content: '\A'; white-space: pre-wrap;
+  text-align: justify;
+   }
+
+   .btn-forms{
+    position: relative;
+    right: 0px;
+    width: 50%;
+    min-width: 150px;
+    margin: auto;
+    height: 50px;
+      border-radius: 25px;
+    background-color: #141c4c;
+    font-family: OswalMedium;
+    color: #ffffff;
+    font-size: 25px;
+    border-color: #141c4c;
+    transition: 0.2s;
+  }
+
+  .btn-forms-mobile{
+    position: relative;
+    right: 0px;
+    width: 100%;
+    min-width: 150px;
+    margin: auto;
+    height: 50px;
+    margin-top:50px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    background-color: #141c4c;
+    font-family: OswalMedium;
+    color: #ffffff;
+    font-size: 25px;
+    border-color: #141c4c;
+    transition: 0.2s;
+  }
+
+
+  .btn-forms:hover{
+
+    background-color: #144874;
+
+  }
+
+  .title-notice{
+    margin-left: 80px;
+    width: 80%;
+    position: absolute;
+    font-size: 80px;
+    color: #fff;
+    font-family: oswalmedium;
+    bottom: 200px;
+  }
+
+
+  .body-content-mobile{
+    width: 100vw;
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .body-content-mobile p{
+
+    font-size: 1.2rem;
+    text-align: justify;
+  }
+
+  .head-mobile{
+    height: 100vw;
+  }
+
+  .head-mobile p{
+
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    padding: auto;
+    margin: 0;
+    top: 150px;
+  }

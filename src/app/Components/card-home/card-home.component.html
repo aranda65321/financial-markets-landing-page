@@ -1,0 +1,56 @@
+<div class="home-card-home">
+  <div class="card-type-1" *ngIf="typeView === 1">
+    <div class="row row-mod">
+      <div [ngClass]="{'card-home-img-mobile':isMobile}" class="col-md-6 div-card-home-img">
+        <img [ngClass]="{'card-home-imgs-mobile':isMobile}" class="card-home-img" src={{data.imgPath}} />
+      </div>
+      <div class="col-md-6">
+        <div [ngClass]="{'card-home-text-content-mobile': isMobile}" class="card-home-text-content">
+          <label [ngClass]="{'card-home-title-mobile':isMobile}" class="card-home-title">
+            {{data.title}}
+          </label>
+          <div class="card-home-line"></div>
+          <br>
+          <div style="text-align: center !important;">
+            <p [ngClass]="{'card-home-paragraph-mobile':isMobile}" class="card-home-paragraph"
+              [innerHTML]="this.getPrettyText(data?.content)">
+            </p>
+          </div>
+          <br>
+          <br>
+          <a routerLink="noticias" [queryParams]="{id: data.id}"><span [ngClass]="{'button-blue-mobile':isMobile}"
+              class="btn btn-home button-blue">Saber mas</span></a>
+        </div>
+      </div>
+    </div>
+    <div [ngClass]="{'div-card-home-mobile': isMobile}" class="div-card-home">
+    </div>
+  </div>
+  <div class="card-type-2" *ngIf="typeView === 2">
+    <div class="row row-mod-2">
+      <div class="col-md-6">
+        <div [ngClass]="{'card-home-text-content-mobile-2': isMobile}" class="card-home-text-content-2">
+          <label [ngClass]="{'card-home-title-mobile-2':isMobile}" class="card-home-title-2">
+            {{data.title}}
+          </label>
+          <div class="card-home-line"></div>
+          <br>
+          <div style="text-align: center !important;">
+            <p [ngClass]="{'card-home-paragraph-mobile-2':isMobile}" class="card-home-paragraph-2"
+              [innerHTML]="this.getPrettyText(data?.content)">
+            </p>
+          </div>
+          <br>
+          <br>
+          <a routerLink="noticias" [queryParams]="{id: data.id}"><span [ngClass]="{'button-white-mobile':isMobile}"
+              class="btn btn-home button-white">Saber mas</span></a>
+        </div>
+      </div>
+      <div [ngClass]="{'card-home-img-mobile-2':isMobile}" class="col-md-6 div-card-home-img-2">
+        <img class="card-home-img-2" src={{data.imgPath}} />
+      </div>
+    </div>
+    <div [ngClass]="{'div-card-home-mobile-2': isMobile}" class="div-card-home-2">
+    </div>
+  </div>
+</div>
