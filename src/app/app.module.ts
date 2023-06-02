@@ -56,6 +56,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 
 @NgModule({
   declarations: [
@@ -115,8 +116,8 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     MatTreeModule,
     NgxIntlTelInputModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
-
+    provideFirestore(() => getFirestore()),
+    MatSelectCountryModule.forRoot('es')
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
