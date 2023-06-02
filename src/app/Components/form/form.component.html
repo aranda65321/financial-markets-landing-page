@@ -47,7 +47,7 @@
       </div>
       <br>
       <div class="form-group">
-        <int-phone-prefix [defaultCountry]="'co'" [locale]="'es'" formControlName="formInput2"
+      <!--  <int-phone-prefix [defaultCountry]="'co'" [locale]="'es'" formControlName="formInput2"
           [ngClass]="{'form-control-error ' : this.isEventRegister  && this.formGroup.get('formInput2')?.errors?.['required']}"
           class="dropdown-content">
         </int-phone-prefix>
@@ -58,18 +58,13 @@
         <span *ngIf="this.isEventRegister && this.formGroup.get('formInput2')?.errors?.['pattern']"
           [ngClass]="{'error-label-mobile': isMobile}">
           El Telefono solo puede contener numeros
-        </span>
+        </span> -->
       </div>
     </form>
     <div style="text-align: center;">
       <button [ngClass]="{'btn-forms-mobile ' : this.isMobile}" class="btn btn-success btn-forms"
         (click)="registerUser()" id="submit">Registrarse Gratis</button>
     </div>
-  </div>
-  <div class="create-form-toast">
-    <ngb-toast *ngIf="showToast" header="Notificacion" [autohide]="true" (hidden)="showToast=false">
-      {{message}}
-    </ngb-toast>
   </div>
 </div>
 <div class="row div-2-section" style="background-color: white;">

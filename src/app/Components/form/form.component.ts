@@ -6,6 +6,7 @@ import { Util } from 'src/app/common/utils/Utils';
 import { PageService } from './../../common/page/page.service';
 import { Country } from 'src/app/common/domain/models/country';
 import { COUNTRIES_DB_ES } from 'src/app/common/domain/models/countries';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form',
@@ -17,13 +18,13 @@ export class FormComponent implements OnInit {
   isMobile = false;
   formGroup: FormGroup;
   isEventRegister: boolean = false;
-  showToast: boolean = false;
   message: string = 'Usuario registrado exitosamente';
   countries: Country[];
 
   constructor(
     private pageService: PageService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private _snackBar: MatSnackBar
   ) {
     this.countries = COUNTRIES_DB_ES;
     this.formGroup = this.formBuilder.group({
@@ -48,7 +49,7 @@ export class FormComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       formInput: ['', Validators.required],
       formInput4: ['', Validators.required],
-      formInput2: ['', [Validators.required, Validators.pattern(/^([+0-9])*$/)]],
+      //formInput2: ['', [Validators.required, Validators.pattern(/^([+0-9])*$/)]],
       formInput3: ['', [Validators.required, Validators.email]],
     });
   }
@@ -61,7 +62,7 @@ export class FormComponent implements OnInit {
       const name = $('#formInput').val() + '';
       const pais = $('#formInput4').val() + '';
       const mail = $('#formInput3').val() + '';
-      const telephone = this.formGroup.controls['formInput2'].value + '';
+      const telephone = ""//this.formGroup.controls['formInput2'].value + '';
       const date = new Date().toLocaleDateString('en-US');
       const user: User = {
         name,
@@ -71,8 +72,8 @@ export class FormComponent implements OnInit {
         creationDate: date,
       };
       this.pageService.createUser(user);
-      this.showToast = true;
       this.cleanForm();
+      this.openSnackBar("Registro exitoso","Continuar")
 
 
     }
@@ -86,5 +87,11 @@ export class FormComponent implements OnInit {
     if (this.users !== undefined) {
       Util.getUrlDownloadCsv(Util.getDataCsv(this.users));
     }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 5 * 1000,
+    });
   }
 }

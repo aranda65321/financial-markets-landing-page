@@ -20,6 +20,12 @@
   margin-right: 0px !important;
 }
 
+//Cambio color spinner load
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #141c4c !important;
+}
+
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
 import { Card } from 'src/app/common/domain/models/Card';
@@ -13,11 +14,11 @@ import { environment } from 'src/environments/environment';
 export class FormCardComponent implements OnInit {
   constructor(
     private pageService: PageService,
-    private router: Router
+    private router: Router,
+    private _snackBar: MatSnackBar
   ) { }
   isMobile = false;
   message: string = "";
-  showToast: boolean = false;
 
   ngOnInit(): void {
     let user = prompt("User", "");
@@ -40,13 +41,12 @@ export class FormCardComponent implements OnInit {
     const errorMessage = this.validForm();
     if (errorMessage !== "") {
       this.message = errorMessage;
-      this.showToast = true;
+      this.openSnackBar("No se logro guardar la noticia", "Continuar");
       return;
     }
-    this.message = "Noticia creada exitosamente";
     this.createNewCard();
-    this.showToast = true;
     this.cleanForm();
+    this.openSnackBar("Noticia creada exitosamente", "Continuar");
   }
 
   validForm(): string {
@@ -55,7 +55,7 @@ export class FormCardComponent implements OnInit {
     const category = $("#category").val();
     const imgUrl = $("#imgUrl").val();
     const content = $("#content").val();
-    const ButtonTitle=$("#buttons").val();
+    const ButtonTitle = $("#buttons").val();
 
     if (title === undefined || title === null || title === '') {
       errorMessage += 'Es obligatorio llenar el campo titulo \n';
@@ -68,6 +68,9 @@ export class FormCardComponent implements OnInit {
     }
     if (content === undefined || content === null || content === '') {
       errorMessage += "Es obligatorio llenar el campo contenido \n";
+    }
+    if (ButtonTitle === undefined || ButtonTitle === null || ButtonTitle === '') {
+      errorMessage += "Es obligatorio llenar el campo titulo boton \n";
     }
     return errorMessage;
   }
@@ -87,7 +90,7 @@ export class FormCardComponent implements OnInit {
     const content = this.getParagraphs($("#content").val() + "");
     const creationDate = new Date().toLocaleDateString("en-US");
     const views = 0;
-    const ButtonTitle =$("#buttons").val()+"";
+    const ButtonTitle = $("#buttons").val() + "";
     const card: Card = {
       title,
       category,
@@ -107,10 +110,15 @@ export class FormCardComponent implements OnInit {
       const element = arrayStrings[index];
       if (element !== '') {
         values.push(element);
-
-
       }
     }
     return values;
+  }
+
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 5 * 1000,
+    });
   }
 }
