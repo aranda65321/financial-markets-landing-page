@@ -62,9 +62,7 @@ export class FormComponent implements OnInit {
 
   registerUser() {
     this.isEventRegister = true;
-    debugger;
     if (!this.formGroup.invalid) {
-      debugger
       this.isEventRegister = false;
       const name = $('#formInput').val() + '';
       const pais = $('#formInput4').val() + '';
