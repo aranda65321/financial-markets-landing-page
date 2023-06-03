@@ -15,17 +15,17 @@ const routes: Routes = [
   {
     path: '', component: BodyComponent,
     children: [
-      { path: '', component: HomeComponent },
-      { path: 'criptomonedas', component: NewsContentComponent, data: { type: 1 } },
-      { path: 'finanzas', component: NewsContentComponent, data: { type: 2 } },
-      { path: 'create', component: FormCardComponent },
-      { path: 'registro', component: FormComponent },
-      { path: 'noticias', component: PageViewComponent},
-      { path: 'descargas', component: DownloadComponent}
+      { path: '', component: HomeComponent, data: { title: "Realidad mercados financieros" } },
+      { path: 'criptomonedas', component: NewsContentComponent, data: { title: "Criptomonedas", type: 1 } },
+      { path: 'finanzas', component: NewsContentComponent, data: { title: "Finanzas", type: 2 } },
+      { path: 'create', component: FormCardComponent, data: { title: "Crear noticia" } },
+      { path: 'registro', component: FormComponent, data: { title: "Registro" } },
+      { path: 'noticias', component: PageViewComponent,  data: { title: "Noticia" } },
+      { path: 'descargas', component: DownloadComponent, data: { title: "Descargas" } }
     ]
   },
   {
-    path:'**', redirectTo:'', pathMatch:'full'
+    path: '**', redirectTo: '', pathMatch: 'full'
   }
 ];
 
@@ -34,8 +34,8 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+      initialNavigation: 'enabled'
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

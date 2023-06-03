@@ -16,7 +16,6 @@ export class DownloadComponent implements OnInit {
 users?: User[];
 formGroup: FormGroup;
   constructor(
-
     private pageService: PageService,
     private router: Router,
     private formBuilder: FormBuilder

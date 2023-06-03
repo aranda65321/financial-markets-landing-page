@@ -3,6 +3,7 @@ import { PageService } from '../../common/page/page.service';
 import { Card } from '../../common/domain/models/Card';
 import { Util } from '../../common/utils/Utils';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-page-view',
@@ -21,7 +22,8 @@ export class PageViewComponent implements OnInit {
   constructor(
     private pageService: PageService,
     private routes: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private titleService: Title
   ) {
     this.routes.queryParams.subscribe({
       next: (data) => {
@@ -33,6 +35,8 @@ export class PageViewComponent implements OnInit {
         this.cards = Util.orderListCardByViews(data);
         if (this.cards.length !== 0 && this.idCard !== undefined && this.idCard !== '') {
           this.card = Util.filterCardById(this.idCard, this.cards);
+          this.titleService.setTitle("Noticia: " + this.card.title);
+          this.setGoogleAnalities("Noticia: " + this.card.title);
         } else {
           this.router.navigate(['']);
         }
@@ -49,7 +53,13 @@ export class PageViewComponent implements OnInit {
     this.isMobile = false;
   }
 
-  getPrettyText(value:string){
-    return Util.getTextDecorateStrong(value, '*/','/*');
+  getPrettyText(value: string) {
+    return Util.getTextDecorateStrong(value, '*/', '/*');
+  }
+
+  setGoogleAnalities(title: string) {
+    gtag('event', 'page_view', {
+      page_title: title,
+    })
   }
 }

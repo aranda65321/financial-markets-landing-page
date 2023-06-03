@@ -16,6 +16,7 @@ export const environment = {
     user: 'realidadmercado211',
     pass: 'Auto.976'
   },
+  
   production: false,
 };
 
