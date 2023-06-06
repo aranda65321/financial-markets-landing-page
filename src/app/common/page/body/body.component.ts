@@ -1,5 +1,4 @@
-import { AfterViewChecked, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { Form } from '@angular/forms';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LoaderService } from '../loader.service';
 
 @Component({

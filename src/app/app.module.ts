@@ -54,6 +54,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageModule } from './common/page/page.module';
 import { SpinnerLoadComponent } from './common/page/spinner-load/spinner-load.component';
+import { FacebookAnalyticsLoggerModule } from '@dagonmetric/ng-log-facebook-analytics';
+import { LogModule } from '@dagonmetric/ng-log';
+import { PixelModule } from 'ngx-pixel';
 
 @NgModule({
   declarations: [
@@ -114,6 +117,11 @@ import { SpinnerLoadComponent } from './common/page/spinner-load/spinner-load.co
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    FacebookAnalyticsLoggerModule,
+    LogModule.withConfig({
+      minLevel: 'debug'
+    }),
+    PixelModule.forRoot({ enabled: true, pixelId: '617230043706288' })
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

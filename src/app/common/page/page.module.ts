@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { BodyComponent } from './body/body.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ContentPageComponent } from './content-page/content-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { ContentPageComponent } from './content-page/content-page.component';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 import { LoaderService } from './loader.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({

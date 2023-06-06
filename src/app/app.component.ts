@@ -1,8 +1,10 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterState } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { ActivatedRoute, NavigationEnd, Router, RouterState } from '@angular/router';
+import { LogService } from '@dagonmetric/ng-log';
+import { PixelService } from 'ngx-pixel';
+declare let fbq: Function;
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,8 @@ export class AppComponent implements OnInit {
     private meta: Meta,
     private router: Router,
     @Inject(DOCUMENT) private document: Document,
-    private titleService: Title
+    private titleService: Title,
+    private pixel: PixelService
   ) {
     this.handleRouteEvents();
   }
@@ -30,8 +33,13 @@ export class AppComponent implements OnInit {
       { name: 'author', content: 'Arp tecnology' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'date', content: '2023-06-2023', scheme: 'YYYY-MM-DD' },
-      { charset: 'UTF-8' }
+      { charset: 'UTF-8' },
     ]);
+    this.meta.addTag({ property: 'og:title', content: 'Realidad Mercados Financieros' });
+    this.meta.addTag({ property: 'og:description', content: "Un sitio web dedicado completamente a informar sobre las noticias y acontecimientos mas importantes que influyen en la economia mundial" });
+    this.meta.addTag({ property: 'og:image', content: "assets/background-form.png" });
+    this.pixel.track('PageView', {
+    });
   }
 
 
@@ -45,6 +53,7 @@ export class AppComponent implements OnInit {
           page_path: event.urlAfterRedirects,
           page_location: this.document.location.href
         })
+        fbq('track', title);
       }
     });
   }

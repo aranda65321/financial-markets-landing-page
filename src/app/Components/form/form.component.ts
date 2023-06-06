@@ -8,6 +8,7 @@ import { Country } from 'src/app/common/domain/models/country';
 import { COUNTRIES_DB_ES } from 'src/app/common/domain/models/countries';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-form',
@@ -22,15 +23,16 @@ export class FormComponent implements OnInit {
   message: string = 'Usuario registrado exitosamente';
   countries: Country[];
   preferredCountries: CountryISO[] = [CountryISO.Colombia, CountryISO.UnitedStates];
-  	separateDialCode = false;
-	SearchCountryField = SearchCountryField;
-	CountryISO = CountryISO;
+  separateDialCode = false;
+  SearchCountryField = SearchCountryField;
+  CountryISO = CountryISO;
   PhoneNumberFormat = PhoneNumberFormat;
 
   constructor(
     private pageService: PageService,
     private formBuilder: FormBuilder,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private meta: Meta,
   ) {
     this.countries = COUNTRIES_DB_ES;
     this.formGroup = this.formBuilder.group({
@@ -52,12 +54,16 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.meta.updateTag({ property: 'og:title', content: 'Registrate' });
+    this.meta.updateTag({ property: 'og:description', content: "Registrate para brindarte asesoria" });
+    this.meta.updateTag({ property: 'og:image', content: "/assets/img/bandas.jpg" });
     this.formGroup = this.formBuilder.group({
       formInput: ['', Validators.required],
       formInput4: ['', Validators.required],
       formInput2: ['', [Validators.required]],
       formInput3: ['', [Validators.required, Validators.email]],
     });
+
   }
 
   registerUser() {
@@ -78,7 +84,7 @@ export class FormComponent implements OnInit {
       };
       this.pageService.createUser(user);
       this.cleanForm();
-      this.openSnackBar("Registro exitoso","Continuar")
+      this.openSnackBar("Registro exitoso", "Continuar")
 
 
     }
@@ -101,6 +107,6 @@ export class FormComponent implements OnInit {
   }
 
   changePreferredCountries() {
-		this.preferredCountries = [CountryISO.Colombia, CountryISO.UnitedArabEmirates];
-	}
+    this.preferredCountries = [CountryISO.Colombia, CountryISO.UnitedArabEmirates];
+  }
 }

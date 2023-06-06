@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Card } from './../../common/domain/models/Card';
 import { Util } from 'src/app/common/utils/Utils';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-card-home',
@@ -13,6 +14,7 @@ export class CardHomeComponent implements OnInit {
 
   isMobile = false;
   constructor(
+    private meta: Meta,
   ) { }
 
   ngOnInit(): void {
