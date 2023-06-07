@@ -24,20 +24,20 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const title = 'Realidad mercados financieros';
+    const title = 'Noticias del mercado financiero y criptomonedas';
     this.titleService.setTitle(title);
     this.meta.addTags([
       { name: 'keywords', content: 'mercaodos, finanzas, bitcoint, btc, inversiones, noticas, mundo cripto' },
-      { name: 'description', content: 'Un sitio web dedicado completamente a informar sobre las noticias y acontecimientos mas importantes que influyen en la economia mundial' },
+      { name: 'description', content: 'Descubre las últimas noticias financieras y de criptomonedas con análisis y actualizaciones en tiempo real. Mantente informado y toma decisiones informadas en el mercado financiero' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Arp tecnology' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'date', content: '2023-06-2023', scheme: 'YYYY-MM-DD' },
       { charset: 'UTF-8' },
     ]);
-    this.meta.addTag({ property: 'og:title', content: 'Realidad Mercados Financieros' });
-    this.meta.addTag({ property: 'og:description', content: "Un sitio web dedicado completamente a informar sobre las noticias y acontecimientos mas importantes que influyen en la economia mundial" });
-    this.meta.addTag({ property: 'og:image', content: "assets/background-form.png" });
+    this.meta.addTag({ property: 'og:title', content: 'Noticias del mercado financiero y criptomonedas' });
+    this.meta.addTag({ property: 'og:description', content: "Descubre las últimas noticias financieras y de criptomonedas con análisis y actualizaciones en tiempo real. Mantente informado y toma decisiones informadas en el mercado financiero" });
+    this.meta.addTag({ property: 'og:image', content: '/assets/background-form.png' });
     this.pixel.track('PageView', {
     });
   }
