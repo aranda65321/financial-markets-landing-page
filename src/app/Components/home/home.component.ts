@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Card } from 'src/app/common/domain/models/Card';
 import { PageService } from 'src/app/common/page/page.service';
 import { Util } from 'src/app/common/utils/Utils';
@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private pageService: PageService,
     private meta: Meta,
+    private titleService: Title,
   ) {
     this.pageService.getAllCards().subscribe({
       next: (data) => {
@@ -48,9 +49,11 @@ export class HomeComponent implements OnInit {
       return;
     }
     this.isMobile = false;
-    this.meta.updateTag({ property: 'og:title', content: 'Realidad Mercados Financieros' });
-    this.meta.updateTag({ property: 'og:description', content: "Un sitio web dedicado completamente a informar sobre las noticias y acontecimientos mas importantes que influyen en la economia mundial" });
-    this.meta.updateTag({ property: 'og:image', content: "assets/background-form.png" });
+    const title = 'Realida Mercado Financiero';
+    this.titleService.setTitle(title);
+    this.meta.updateTag({ property: 'og:title', content: 'Noticias del mercado financiero y criptomonedas' });
+    this.meta.updateTag({ property: 'og:description', content: "Descubre las últimas noticias financieras y de criptomonedas con análisis y actualizaciones en tiempo real. Mantente informado y toma decisiones informadas en el mercado financiero" });
+    this.meta.updateTag({ property: 'og:image', content: "/assets/background-form.png" });
   }
 
 

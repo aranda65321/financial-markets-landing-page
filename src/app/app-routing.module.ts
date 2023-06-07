@@ -15,12 +15,12 @@ const routes: Routes = [
   {
     path: '', component: BodyComponent,
     children: [
-      { path: '', component: HomeComponent, data: { title: "Realidad mercados financieros" } },
+      { path: '', component: HomeComponent, data: { title: "Noticias del mercado financiero y criptomonedas" } },
       { path: 'criptomonedas', component: NewsContentComponent, data: { title: "Criptomonedas", type: 1 } },
       { path: 'finanzas', component: NewsContentComponent, data: { title: "Finanzas", type: 2 } },
       { path: 'create', component: FormCardComponent, data: { title: "Crear noticia" } },
       { path: 'registro', component: FormComponent, data: { title: "Registro" } },
-      { path: 'noticias', component: PageViewComponent,  data: { title: "Noticia" } },
+      { path: 'noticias', component: PageViewComponent, data: { title: "Noticia" } },
       { path: 'descargas', component: DownloadComponent, data: { title: "Descargas" } }
     ]
   },

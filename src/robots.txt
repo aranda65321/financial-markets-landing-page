@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://realidadmercadofinanciero.com/#/sitemap.xml

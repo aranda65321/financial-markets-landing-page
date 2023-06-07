@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const title = 'Noticias del mercado financiero y criptomonedas';
+    const title = 'Realida Mercado Financiero';
     this.titleService.setTitle(title);
     this.meta.addTags([
       { name: 'keywords', content: 'mercaodos, finanzas, bitcoint, btc, inversiones, noticas, mundo cripto' },

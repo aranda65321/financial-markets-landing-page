@@ -20,7 +20,7 @@
           <p class="content-text" [innerHTML]="this.getPrettyText(item)"></p>
           <br>
           <div class="text-align:center">
-            <a routerLink="/registro" *ngIf="((i + 1) === card.content?.length) || ((((i+1)%6)===0) && i > 0) ">
+            <a href="/#/registro" *ngIf="((i + 1) === card.content?.length) || ((((i+1)%6)===0) && i > 0) ">
               <span class="btn btn-success btn-forms" [ngClass]="{'btn-forms-mobile': isMobile}">
                 {{card?.ButtonTitle}}
               </span>

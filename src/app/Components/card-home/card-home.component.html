@@ -18,7 +18,7 @@
           </div>
           <br>
           <br>
-          <a routerLink="noticias" [queryParams]="{id: data.id}"><span [ngClass]="{'button-blue-mobile':isMobile}"
+          <a href="/#/noticias?id={{data.id}}"><span [ngClass]="{'button-blue-mobile':isMobile}"
               class="btn btn-home button-blue">Saber mas</span></a>
         </div>
       </div>
@@ -42,7 +42,7 @@
           </div>
           <br>
           <br>
-          <a routerLink="noticias" [queryParams]="{id: data.id}"><span [ngClass]="{'button-white-mobile':isMobile}"
+          <a href="/#/noticias?id={{data.id}}"><span [ngClass]="{'button-white-mobile':isMobile}"
               class="btn btn-home button-white">Saber mas</span></a>
         </div>
       </div>
