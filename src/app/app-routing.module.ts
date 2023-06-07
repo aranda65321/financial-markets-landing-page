@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: 'create', component: FormCardComponent, data: { title: "Crear noticia" } },
       { path: 'registro', component: FormComponent, data: { title: "Registro" } },
       { path: 'noticias', component: PageViewComponent, data: { title: "Noticia" } },
-      { path: 'descargas', component: DownloadComponent, data: { title: "Descargas" } }
+      { path: 'descargas', component: DownloadComponent, data: { title: "Descargas" } },
     ]
   },
   {

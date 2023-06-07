@@ -1,0 +1,7 @@
+{
+  "/#/sitemap.xml": {
+    "target": "https://realidadmercadofinanciero.com/#/assets/sitemap.xml",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}
